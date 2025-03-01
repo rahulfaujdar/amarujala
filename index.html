@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>अमर उजाला</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: black;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 300px;
+      padding: 20px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: black;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: black;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 16px;
+      margin-top: 15px;
+      color: #333;
+      display: block;
+    }
+
+    input,
+    select,
+    button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #444;
+      border-radius: 4px;
+      font-size: 16px;
+      background-color: #f4f4f4;
+      color: black;
+    }
+
+    button {
+      background-color: #000;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background-color: #333;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      input,
+      select,
+      button {
+        font-size: 14px;
+      }
+    }
+
+    .downloading-message {
+      color: red;
+      text-align: center;
+      font-size: 16px;
+      display: none;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="form-container" id="form">
+    <h1>अमर उजाला</h1>
+    <h2>ई-पेपर</h2>
+
+    <label for="datePicker">एक तारीख चुनें</label>
+    <input type="date" min="2015-01-01" id="datePicker" required><br>
+
+    <label for="city">शहर चुनें</label>
+    <select id="city" required></select><br>
+
+    <button onclick="download()">Download</button>
+    <p id="downloadingMessage" class="downloading-message">Downloading, please wait...</p>
+  </div>
+
+  <div id="preview"></div>
+
+</body>
+
+<script>
+
+  const data = {
+    "agra-city": {
+      "title": "Agra city",
+      "slug": "agra-city"
+    },
+    "agra-dehat": {
+      "title": "Agra dehat",
+      "slug": "agra-dehat"
+    },
+    "aligarh-city": {
+      "title": "Aligarh city",
+      "slug": "aligarh-city"
+    },
+    "aligarh-dehat": {
+      "title": "Aligarh dehat",
+      "slug": "aligarh-dehat"
+    },
+    "almora": {
+      "title": "Almora",
+      "slug": "almora"
+    },
+    "ambala": {
+      "title": "Ambala",
+      "slug": "ambala"
+    },
+    "ambedkar-nagar": {
+      "title": "Ambedkar nagar",
+      "slug": "ambedkar-nagar"
+    },
+    "amethi": {
+      "title": "Amethi",
+      "slug": "amethi"
+    },
+    "jpnagar": {
+      "title": "Amroha",
+      "slug": "jpnagar"
+    },
+    "auraiya": {
+      "title": "Auraiya",
+      "slug": "auraiya"
+    },
+    "faizabad": {
+      "title": "Ayodhya",
+      "slug": "faizabad"
+    },
+    "azamgarh": {
+      "title": "Azamgarh",
+      "slug": "azamgarh"
+    },
+    "badaun": {
+      "title": "Badaun",
+      "slug": "badaun"
+    },
+    "baghpat": {
+      "title": "Baghpat",
+      "slug": "baghpat"
+    },
+    "bahraich": {
+      "title": "Bahraich",
+      "slug": "bahraich"
+    },
+    "balia": {
+      "title": "Ballia",
+      "slug": "balia"
+    },
+    "balrampur": {
+      "title": "Balrampur",
+      "slug": "balrampur"
+    },
+    "banda": {
+      "title": "Banda",
+      "slug": "banda"
+    },
+    "barabanki": {
+      "title": "Barabanki",
+      "slug": "barabanki"
+    },
+    "bareilly-city": {
+      "title": "Bareilly city",
+      "slug": "bareilly-city"
+    },
+    "bareilly-dehat": {
+      "title": "Bareilly dehat",
+      "slug": "bareilly-dehat"
+    },
+    "basti": {
+      "title": "Basti",
+      "slug": "basti"
+    },
+    "bhadohi": {
+      "title": "Bhadohi",
+      "slug": "bhadohi"
+    },
+    "bhiwani": {
+      "title": "Bhiwani",
+      "slug": "bhiwani"
+    },
+    "bhopal": {
+      "title": "Bhopal",
+      "slug": "bhopal"
+    },
+    "bijnor": {
+      "title": "Bijnor",
+      "slug": "bijnor"
+    },
+    "bilaspur": {
+      "title": "Bilaspur",
+      "slug": "bilaspur"
+    },
+    "bulandsahar": {
+      "title": "Bulandshahr",
+      "slug": "bulandsahar"
+    },
+    "chamba": {
+      "title": "Chamba",
+      "slug": "chamba"
+    },
+    "garhwal": {
+      "title": "Chamoli – Rudraprayag (Garhwal)",
+      "slug": "garhwal"
+    },
+    "chandauli": {
+      "title": "Chandauli",
+      "slug": "chandauli"
+    },
+    "chandigarh-city": {
+      "title": "Chandigarh city",
+      "slug": "chandigarh-city"
+    },
+    "charkhi-dadri": {
+      "title": "Charkhi Dadri",
+      "slug": "charkhi-dadri"
+    },
+    "dehradun-city": {
+      "title": "Dehradun city",
+      "slug": "dehradun-city"
+    },
+    "delhi-city": {
+      "title": "Delhi",
+      "slug": "delhi-city"
+    },
+    "deoria": {
+      "title": "Deoria",
+      "slug": "deoria"
+    },
+    "etah": {
+      "title": "Etah",
+      "slug": "etah"
+    },
+    "etawa": {
+      "title": "Etawa",
+      "slug": "etawa"
+    },
+    "faridabad": {
+      "title": "Faridabad",
+      "slug": "faridabad"
+    },
+    "farrukhabad": {
+      "title": "Farrukhabad",
+      "slug": "farrukhabad"
+    },
+    "fatehabad": {
+      "title": "Fatehabad",
+      "slug": "fatehabad"
+    },
+    "fatehpur": {
+      "title": "Fatehpur",
+      "slug": "fatehpur"
+    },
+    "firozabad": {
+      "title": "Firozabad",
+      "slug": "firozabad"
+    },
+    "ghaziabad": {
+      "title": "Ghaziabad",
+      "slug": "ghaziabad"
+    },
+    "trans-hindon-area": {
+      "title": "Ghaziabad-Trans Hindon Area",
+      "slug": "trans-hindon-area"
+    },
+    "ghazipur": {
+      "title": "Ghazipur",
+      "slug": "ghazipur"
+    },
+    "gonda-balrampur": {
+      "title": "Gonda",
+      "slug": "gonda-balrampur"
+    },
+    "gorakhpur-city": {
+      "title": "Gorakhpur city",
+      "slug": "gorakhpur-city"
+    },
+    "gorakhpur-dehat": {
+      "title": "Gorakhpur dehat",
+      "slug": "gorakhpur-dehat"
+    },
+    "greater-noida": {
+      "title": "Greater noida",
+      "slug": "greater-noida"
+    },
+    "gurgaon": {
+      "title": "Gurugram",
+      "slug": "gurgaon"
+    },
+    "hamirpur-dharamshala": {
+      "title": "Hamirpur (Himachal)",
+      "slug": "hamirpur-dharamshala"
+    },
+    "hamirpur": {
+      "title": "Hamirpur (UP)",
+      "slug": "hamirpur"
+    },
+    "hapur": {
+      "title": "Hapur",
+      "slug": "hapur"
+    },
+    "hardoi": {
+      "title": "Hardoi",
+      "slug": "hardoi"
+    },
+    "haridwar": {
+      "title": "Haridwar",
+      "slug": "haridwar"
+    },
+    "hathras": {
+      "title": "Hathras",
+      "slug": "hathras"
+    },
+    "hisar": {
+      "title": "Hisar City",
+      "slug": "hisar"
+    },
+    "hisar-dehat": {
+      "title": "Hisar Dehat",
+      "slug": "hisar-dehat"
+    },
+    "jalandhar": {
+      "title": "Jalandhar",
+      "slug": "jalandhar"
+    },
+    "jalaun": {
+      "title": "Jalaun",
+      "slug": "jalaun"
+    },
+    "jammu-city": {
+      "title": "Jammu city",
+      "slug": "jammu-city"
+    },
+    "jammu-dehat": {
+      "title": "Jammu dehat",
+      "slug": "jammu-dehat"
+    },
+    "jounpur": {
+      "title": "Jaunpur",
+      "slug": "jounpur"
+    },
+    "jhajjar": {
+      "title": "Jhajjar",
+      "slug": "jhajjar"
+    },
+    "jhansi-city": {
+      "title": "Jhansi city",
+      "slug": "jhansi-city"
+    },
+    "jhansi-dehat": {
+      "title": "Jhansi dehat",
+      "slug": "jhansi-dehat"
+    },
+    "jind": {
+      "title": "Jind",
+      "slug": "jind"
+    },
+    "kaithal": {
+      "title": "Kaithal",
+      "slug": "kaithal"
+    },
+    "kangra": {
+      "title": "Kangra",
+      "slug": "kangra"
+    },
+    "kannauj": {
+      "title": "Kannauj",
+      "slug": "kannauj"
+    },
+    "kanpur-ghatampur": {
+      "title": "Kanpur Ghatampur",
+      "slug": "kanpur-ghatampur"
+    },
+    "kanpur-city": {
+      "title": "Kanpur city",
+      "slug": "kanpur-city"
+    },
+    "kanpur-dehat": {
+      "title": "Kanpur dehat",
+      "slug": "kanpur-dehat"
+    },
+    "karnal": {
+      "title": "Karnal",
+      "slug": "karnal"
+    },
+    "kasganj": {
+      "title": "Kasganj",
+      "slug": "kasganj"
+    },
+    "kathua": {
+      "title": "Kathua",
+      "slug": "kathua"
+    },
+    "kaushambi": {
+      "title": "Kaushambi",
+      "slug": "kaushambi"
+    },
+    "kullu": {
+      "title": "Kullu",
+      "slug": "kullu"
+    },
+    "kurukshetra": {
+      "title": "Kurukshetra",
+      "slug": "kurukshetra"
+    },
+    "kushinagar": {
+      "title": "Kushinagar",
+      "slug": "kushinagar"
+    },
+    "khiri": {
+      "title": "Lakhimpur Kheri",
+      "slug": "khiri"
+    },
+    "lalitpur": {
+      "title": "Lalitpur",
+      "slug": "lalitpur"
+    },
+    "lucknow-city": {
+      "title": "Lucknow city",
+      "slug": "lucknow-city"
+    },
+    "mharajgunj": {
+      "title": "Maharajganj",
+      "slug": "mharajgunj"
+    },
+    "mainpuri": {
+      "title": "Mainpuri",
+      "slug": "mainpuri"
+    },
+    "mandi": {
+      "title": "Mandi",
+      "slug": "mandi"
+    },
+    "mathura": {
+      "title": "Mathura",
+      "slug": "mathura"
+    },
+    "mau": {
+      "title": "Mau",
+      "slug": "mau"
+    },
+    "meerut-city": {
+      "title": "Meerut city",
+      "slug": "meerut-city"
+    },
+    "meerut-dehat": {
+      "title": "Meerut dehat",
+      "slug": "meerut-dehat"
+    },
+    "mirzapur": {
+      "title": "Mirzapur",
+      "slug": "mirzapur"
+    },
+    "mohali": {
+      "title": "Mohali",
+      "slug": "mohali"
+    },
+    "moradabad-city": {
+      "title": "Moradabad city",
+      "slug": "moradabad-city"
+    },
+    "moradabad-dehat": {
+      "title": "Moradabad dehat",
+      "slug": "moradabad-dehat"
+    },
+    "muzaffarnagar": {
+      "title": "Muzaffarnagar",
+      "slug": "muzaffarnagar"
+    },
+    "haldwani": {
+      "title": "Nainital",
+      "slug": "haldwani"
+    },
+    "narnaul": {
+      "title": "Narnaul",
+      "slug": "narnaul"
+    },
+    "noida": {
+      "title": "Noida",
+      "slug": "noida"
+    },
+    "panchkula": {
+      "title": "Panchkula",
+      "slug": "panchkula"
+    },
+    "panipat": {
+      "title": "Panipat",
+      "slug": "panipat"
+    },
+    "kotdwar": {
+      "title": "Pauri Garhwal (Kotdwar)",
+      "slug": "kotdwar"
+    },
+    "pilibhit": {
+      "title": "Pilibhit",
+      "slug": "pilibhit"
+    },
+    "pithoragarh": {
+      "title": "Pithoragarh",
+      "slug": "pithoragarh"
+    },
+    "pratapgarh": {
+      "title": "Pratapgarh",
+      "slug": "pratapgarh"
+    },
+    "allahabad-city": {
+      "title": "Prayagraj City",
+      "slug": "allahabad-city"
+    },
+    "gangapar": {
+      "title": "Prayagraj Gangapar",
+      "slug": "gangapar"
+    },
+    "prayagraj-naini": {
+      "title": "Prayagraj Naini",
+      "slug": "prayagraj-naini"
+    },
+    "raebareli": {
+      "title": "Raebareli",
+      "slug": "raebareli"
+    },
+    "rajasthan": {
+      "title": "Rajasthan",
+      "slug": "rajasthan"
+    },
+    "rampur-dharamshala": {
+      "title": "Rampur (Himachal)",
+      "slug": "rampur-dharamshala"
+    },
+    "rampur": {
+      "title": "Rampur (UP)",
+      "slug": "rampur"
+    },
+    "rewari": {
+      "title": "Rewari",
+      "slug": "rewari"
+    },
+    "rishikesh": {
+      "title": "Rishikesh",
+      "slug": "rishikesh"
+    },
+    "rohtak-city": {
+      "title": "Rohtak",
+      "slug": "rohtak-city"
+    },
+    "roorkee": {
+      "title": "Roorkee",
+      "slug": "roorkee"
+    },
+    "saharanpur-city": {
+      "title": "Saharanpur city",
+      "slug": "saharanpur-city"
+    },
+    "saharanpur-dehat": {
+      "title": "Saharanpur dehat",
+      "slug": "saharanpur-dehat"
+    },
+    "sambhal": {
+      "title": "Sambhal",
+      "slug": "sambhal"
+    },
+    "santkabirnagar": {
+      "title": "Santkabirnagar",
+      "slug": "santkabirnagar"
+    },
+    "shahjahanpur": {
+      "title": "Shahjahanpur",
+      "slug": "shahjahanpur"
+    },
+    "shamli-muzaffarnagar-dehat": {
+      "title": "Shamli / muzaffarnagar dehat",
+      "slug": "shamli-muzaffarnagar-dehat"
+    },
+    "shimla": {
+      "title": "Shimla",
+      "slug": "shimla"
+    },
+    "siddharthnagar": {
+      "title": "Siddharthnagar",
+      "slug": "siddharthnagar"
+    },
+    "sirmaur": {
+      "title": "Sirmaur",
+      "slug": "sirmaur"
+    },
+    "sirsa": {
+      "title": "Sirsa",
+      "slug": "sirsa"
+    },
+    "sitapur": {
+      "title": "Sitapur",
+      "slug": "sitapur"
+    },
+    "solan": {
+      "title": "Solan",
+      "slug": "solan"
+    },
+    "sonbhadra": {
+      "title": "Sonbhadra",
+      "slug": "sonbhadra"
+    },
+    "sonipat": {
+      "title": "Sonipat",
+      "slug": "sonipat"
+    },
+    "sultanpur": {
+      "title": "Sultanpur",
+      "slug": "sultanpur"
+    },
+    "tehri-uttarkashi": {
+      "title": "Tehri-Uttarkashi (Garhwal)",
+      "slug": "tehri-uttarkashi"
+    },
+    "udhampur": {
+      "title": "Udhampur",
+      "slug": "udhampur"
+    },
+    "udhamsingh-nagar": {
+      "title": "Udhamsingh nagar",
+      "slug": "udhamsingh-nagar"
+    },
+    "una": {
+      "title": "Una",
+      "slug": "una"
+    },
+    "unnao": {
+      "title": "Unnao",
+      "slug": "unnao"
+    },
+    "varanasi-city": {
+      "title": "Varanasi",
+      "slug": "varanasi-city"
+    },
+    "vikas-nagar": {
+      "title": "Vikas nagar",
+      "slug": "vikas-nagar"
+    },
+    "yamuna-nagar": {
+      "title": "Yamuna nagar",
+      "slug": "yamuna-nagar"
+    }
+  }
+
+  function loadSelectData() {
+
+    const selectElement = document.getElementById('city');
+
+    Object.keys(data).forEach(key => {
+      // const key = Object.keys(item);
+
+      const option = document.createElement('option');
+      option.value = data[key].slug;
+      option.textContent = data[key].title;
+      selectElement.appendChild(option);
+    });
+  }
+
+  function download() {
+    const date = document.getElementById('datePicker').value;
+    const city = document.getElementById('city').value;
+
+    const downloadingMessage = document.getElementById('downloadingMessage');
+    const downloadButton = document.querySelector('button');
+
+    downloadButton.style.display = 'none';
+    downloadingMessage.style.display = 'block';
+
+    let [year, month, day] = date.split("-");
+
+    fetch('https://e56rpntfe6.execute-api.ap-south-1.amazonaws.com/dev/download', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        year,
+        month,
+        day,
+        city: city
+      })
+    })
+      .then(response => response.json())
+      .then(async (data) => {
+        const htmlUrl = data.data.htmlUrl;
+        const htmlResponse = await fetch(htmlUrl);
+        const htmlContent = await htmlResponse.text();
+
+        const formContainer = document.getElementById('form');
+        const previewElement = document.getElementById('preview');
+        
+        formContainer.style.display = 'none';
+
+        previewElement.innerHTML = htmlContent;
+      })
+      .catch(error => {
+        console.error('Error:', error);
+
+        downloadButton.style.display = 'block';
+        downloadingMessage.style.display = 'none';
+      });
+  }
+
+  const currentDate = new Date();
+
+  document.getElementById('datePicker').valueAsDate = currentDate;
+  document.getElementById('datePicker').setAttribute("max", `${new Date().getFullYear()}-${(`0${new Date().getMonth() + 1}`).slice(-2)}-${(`0${new Date().getDate()}`).slice(-2)}`);
+
+  window.onload = loadSelectData;
+</script>
+
+</html>
