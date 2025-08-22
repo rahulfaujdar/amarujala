@@ -864,7 +864,7 @@
 
         try {
             
-            const firstResponse = await fetch('d39ihfvw4fm8k.cloudfront.net/dev/v2/download', {
+            const firstResponse = await fetch('https://d39ihfvw4fm8k.cloudfront.net/dev/v2/download', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -892,7 +892,7 @@
 
             for (let i = 2; i <= totalPage; i++) {
                 const pageNumber = i.toString().padStart(2, '0');
-                const pageResponse = await fetch('https://rf3hb8bps6.execute-api.ap-south-1.amazonaws.com/dev/v2/download', {
+                const pageResponse = await fetch('https://d39ihfvw4fm8k.cloudfront.net/dev/v2/download', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
