@@ -85,6 +85,59 @@
             font-size: 16px;
             display: none;
         }
+
+        /* .footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: #f9f9f9;
+            color: #333;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer a {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        } */
+
+        .footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: #f9f9f9;
+            color: #333;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer a {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            /* display: inline-flex; */
+            /* align-items: center; */
+            /* gap: 6px; */
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .insta-icon {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            border-radius: 3px;
+        }
     </style>
 </head>
 
@@ -109,6 +162,15 @@
     </div>
 
     <div id="preview"></div>
+
+    <footer class="footer">
+        Made with by
+        <a href="https://instagram.com/rahulfaujdarx" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
+                class="insta-icon">
+            @rahulfaujdarx
+        </a>
+    </footer>
 
 </body>
 
@@ -863,7 +925,7 @@
         let [year, month, day] = date.split("-");
 
         try {
-            
+
             const firstResponse = await fetch('https://d39ihfvw4fm8k.cloudfront.net/dev/v2/download', {
                 method: 'POST',
                 headers: {
@@ -915,6 +977,7 @@
             }
 
             formContainer.style.display = 'none';
+            document.getElementById('footer').style.display = 'none';
             previewElement.innerHTML = images.map(img => `<div>${img}</div>`).join('');
 
         } catch (error) {
