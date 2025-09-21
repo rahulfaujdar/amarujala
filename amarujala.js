@@ -1,0 +1,790 @@
+// Amar Ujala Data
+const data = {
+    "agra-city": {
+        "title": "Agra city",
+        "slug": "agra-city",
+        "is_mycity": "Y"
+    },
+    "agra-dehat": {
+        "title": "Agra dehat",
+        "slug": "agra-dehat",
+        "is_mycity": "Y"
+    },
+    "aligarh-city": {
+        "title": "Aligarh city",
+        "slug": "aligarh-city",
+        "is_mycity": null
+    },
+    "aligarh-dehat": {
+        "title": "Aligarh dehat",
+        "slug": "aligarh-dehat",
+        "is_mycity": null
+    },
+    "almora": {
+        "title": "Almora",
+        "slug": "almora",
+        "is_mycity": null
+    },
+    "ambala": {
+        "title": "Ambala",
+        "slug": "ambala",
+        "is_mycity": "Y"
+    },
+    "ambedkar-nagar": {
+        "title": "Ambedkar nagar",
+        "slug": "ambedkar-nagar",
+        "is_mycity": "Y"
+    },
+    "amethi": {
+        "title": "Amethi",
+        "slug": "amethi",
+        "is_mycity": "Y"
+    },
+    "jpnagar": {
+        "title": "Amroha",
+        "slug": "jpnagar",
+        "is_mycity": null
+    },
+    "auraiya": {
+        "title": "Auraiya",
+        "slug": "auraiya",
+        "is_mycity": null
+    },
+    "faizabad": {
+        "title": "Ayodhya",
+        "slug": "faizabad",
+        "is_mycity": "Y"
+    },
+    "azamgarh": {
+        "title": "Azamgarh",
+        "slug": "azamgarh",
+        "is_mycity": null
+    },
+    "badaun": {
+        "title": "Badaun",
+        "slug": "badaun",
+        "is_mycity": null
+    },
+    "baghpat": {
+        "title": "Baghpat",
+        "slug": "baghpat",
+        "is_mycity": null
+    },
+    "bahraich": {
+        "title": "Bahraich",
+        "slug": "bahraich",
+        "is_mycity": "Y"
+    },
+    "balia": {
+        "title": "Ballia",
+        "slug": "balia",
+        "is_mycity": null
+    },
+    "balrampur": {
+        "title": "Balrampur",
+        "slug": "balrampur",
+        "is_mycity": "Y"
+    },
+    "banda": {
+        "title": "Banda",
+        "slug": "banda",
+        "is_mycity": null
+    },
+    "barabanki": {
+        "title": "Barabanki",
+        "slug": "barabanki",
+        "is_mycity": "Y"
+    },
+    "bareilly-city": {
+        "title": "Bareilly city",
+        "slug": "bareilly-city",
+        "is_mycity": null
+    },
+    "bareilly-dehat": {
+        "title": "Bareilly dehat",
+        "slug": "bareilly-dehat",
+        "is_mycity": null
+    },
+    "basti": {
+        "title": "Basti",
+        "slug": "basti",
+        "is_mycity": null
+    },
+    "bhadohi": {
+        "title": "Bhadohi",
+        "slug": "bhadohi",
+        "is_mycity": null
+    },
+    "bhiwani": {
+        "title": "Bhiwani",
+        "slug": "bhiwani",
+        "is_mycity": "Y"
+    },
+    "bhopal": {
+        "title": "Bhopal",
+        "slug": "bhopal",
+        "is_mycity": null
+    },
+    "bijnor": {
+        "title": "Bijnor",
+        "slug": "bijnor",
+        "is_mycity": null
+    },
+    "bilaspur": {
+        "title": "Bilaspur",
+        "slug": "bilaspur",
+        "is_mycity": null
+    },
+    "bulandsahar": {
+        "title": "Bulandshahr",
+        "slug": "bulandsahar",
+        "is_mycity": "Y"
+    },
+    "chamba": {
+        "title": "Chamba",
+        "slug": "chamba",
+        "is_mycity": null
+    },
+    "garhwal": {
+        "title": "Chamoli – Rudraprayag (Garhwal)",
+        "slug": "garhwal",
+        "is_mycity": null
+    },
+    "chandauli": {
+        "title": "Chandauli",
+        "slug": "chandauli",
+        "is_mycity": null
+    },
+    "chandigarh-city": {
+        "title": "Chandigarh city",
+        "slug": "chandigarh-city",
+        "is_mycity": "Y"
+    },
+    "charkhi-dadri": {
+        "title": "Charkhi Dadri",
+        "slug": "charkhi-dadri",
+        "is_mycity": "Y"
+    },
+    "dehradun-city": {
+        "title": "Dehradun city",
+        "slug": "dehradun-city",
+        "is_mycity": "Y"
+    },
+    "delhi-city": {
+        "title": "Delhi",
+        "slug": "delhi-city",
+        "is_mycity": null
+    },
+    "deoria": {
+        "title": "Deoria",
+        "slug": "deoria",
+        "is_mycity": null
+    },
+    "etah": {
+        "title": "Etah",
+        "slug": "etah",
+        "is_mycity": null
+    },
+    "etawa": {
+        "title": "Etawa",
+        "slug": "etawa",
+        "is_mycity": null
+    },
+    "faridabad": {
+        "title": "Faridabad",
+        "slug": "faridabad",
+        "is_mycity": null
+    },
+    "farrukhabad": {
+        "title": "Farrukhabad",
+        "slug": "farrukhabad",
+        "is_mycity": null
+    },
+    "fatehabad": {
+        "title": "Fatehabad",
+        "slug": "fatehabad",
+        "is_mycity": "Y"
+    },
+    "fatehpur": {
+        "title": "Fatehpur",
+        "slug": "fatehpur",
+        "is_mycity": null
+    },
+    "firozabad": {
+        "title": "Firozabad",
+        "slug": "firozabad",
+        "is_mycity": null
+    },
+    "ghaziabad": {
+        "title": "Ghaziabad",
+        "slug": "ghaziabad",
+        "is_mycity": "Y"
+    },
+    "trans-hindon-area": {
+        "title": "Ghaziabad-Trans Hindon Area",
+        "slug": "trans-hindon-area",
+        "is_mycity": "Y"
+    },
+    "ghazipur": {
+        "title": "Ghazipur",
+        "slug": "ghazipur",
+        "is_mycity": null
+    },
+    "gonda-balrampur": {
+        "title": "Gonda",
+        "slug": "gonda-balrampur",
+        "is_mycity": "Y"
+    },
+    "gorakhpur-city": {
+        "title": "Gorakhpur city",
+        "slug": "gorakhpur-city",
+        "is_mycity": null
+    },
+    "gorakhpur-dehat": {
+        "title": "Gorakhpur dehat",
+        "slug": "gorakhpur-dehat",
+        "is_mycity": null
+    },
+    "greater-noida": {
+        "title": "Greater noida",
+        "slug": "greater-noida",
+        "is_mycity": "Y"
+    },
+    "gurgaon": {
+        "title": "Gurugram",
+        "slug": "gurgaon",
+        "is_mycity": null
+    },
+    "hamirpur-dharamshala": {
+        "title": "Hamirpur (Himachal)",
+        "slug": "hamirpur-dharamshala",
+        "is_mycity": null
+    },
+    "hamirpur": {
+        "title": "Hamirpur (UP)",
+        "slug": "hamirpur",
+        "is_mycity": null
+    },
+    "hapur": {
+        "title": "Hapur",
+        "slug": "hapur",
+        "is_mycity": "Y"
+    },
+    "hardoi": {
+        "title": "Hardoi",
+        "slug": "hardoi",
+        "is_mycity": null
+    },
+    "haridwar": {
+        "title": "Haridwar",
+        "slug": "haridwar",
+        "is_mycity": "Y"
+    },
+    "hathras": {
+        "title": "Hathras",
+        "slug": "hathras",
+        "is_mycity": null
+    },
+    "hisar": {
+        "title": "Hisar City",
+        "slug": "hisar",
+        "is_mycity": "Y"
+    },
+    "hisar-dehat": {
+        "title": "Hisar Dehat",
+        "slug": "hisar-dehat",
+        "is_mycity": "Y"
+    },
+    "jalandhar": {
+        "title": "Jalandhar",
+        "slug": "jalandhar",
+        "is_mycity": null
+    },
+    "jalaun": {
+        "title": "Jalaun",
+        "slug": "jalaun",
+        "is_mycity": null
+    },
+    "jammu-city": {
+        "title": "Jammu city",
+        "slug": "jammu-city",
+        "is_mycity": null
+    },
+    "jammu-dehat": {
+        "title": "Jammu dehat",
+        "slug": "jammu-dehat",
+        "is_mycity": null
+    },
+    "jounpur": {
+        "title": "Jaunpur",
+        "slug": "jounpur",
+        "is_mycity": null
+    },
+    "jhajjar": {
+        "title": "Jhajjar",
+        "slug": "jhajjar",
+        "is_mycity": "Y"
+    },
+    "jhansi-city": {
+        "title": "Jhansi city",
+        "slug": "jhansi-city",
+        "is_mycity": null
+    },
+    "jhansi-dehat": {
+        "title": "Jhansi dehat",
+        "slug": "jhansi-dehat",
+        "is_mycity": null
+    },
+    "jind": {
+        "title": "Jind",
+        "slug": "jind",
+        "is_mycity": "Y"
+    },
+    "kaithal": {
+        "title": "Kaithal",
+        "slug": "kaithal",
+        "is_mycity": "Y"
+    },
+    "kangra": {
+        "title": "Kangra",
+        "slug": "kangra",
+        "is_mycity": null
+    },
+    "kannauj": {
+        "title": "Kannauj",
+        "slug": "kannauj",
+        "is_mycity": null
+    },
+    "kanpur-ghatampur": {
+        "title": "Kanpur Ghatampur",
+        "slug": "kanpur-ghatampur",
+        "is_mycity": "Y"
+    },
+    "kanpur-city": {
+        "title": "Kanpur city",
+        "slug": "kanpur-city",
+        "is_mycity": "Y"
+    },
+    "kanpur-dehat": {
+        "title": "Kanpur dehat",
+        "slug": "kanpur-dehat",
+        "is_mycity": null
+    },
+    "karnal": {
+        "title": "Karnal",
+        "slug": "karnal",
+        "is_mycity": "Y"
+    },
+    "kasganj": {
+        "title": "Kasganj",
+        "slug": "kasganj",
+        "is_mycity": null
+    },
+    "kathua": {
+        "title": "Kathua",
+        "slug": "kathua",
+        "is_mycity": null
+    },
+    "kaushambi": {
+        "title": "Kaushambi",
+        "slug": "kaushambi",
+        "is_mycity": null
+    },
+    "kullu": {
+        "title": "Kullu",
+        "slug": "kullu",
+        "is_mycity": null
+    },
+    "kurukshetra": {
+        "title": "Kurukshetra",
+        "slug": "kurukshetra",
+        "is_mycity": "Y"
+    },
+    "kushinagar": {
+        "title": "Kushinagar",
+        "slug": "kushinagar",
+        "is_mycity": null
+    },
+    "khiri": {
+        "title": "Lakhimpur Kheri",
+        "slug": "khiri",
+        "is_mycity": null
+    },
+    "lalitpur": {
+        "title": "Lalitpur",
+        "slug": "lalitpur",
+        "is_mycity": null
+    },
+    "lucknow-city": {
+        "title": "Lucknow city",
+        "slug": "lucknow-city",
+        "is_mycity": "Y"
+    },
+    "mharajgunj": {
+        "title": "Maharajganj",
+        "slug": "mharajgunj",
+        "is_mycity": null
+    },
+    "mainpuri": {
+        "title": "Mainpuri",
+        "slug": "mainpuri",
+        "is_mycity": null
+    },
+    "mandi": {
+        "title": "Mandi",
+        "slug": "mandi",
+        "is_mycity": null
+    },
+    "mathura": {
+        "title": "Mathura",
+        "slug": "mathura",
+        "is_mycity": null
+    },
+    "mau": {
+        "title": "Mau",
+        "slug": "mau",
+        "is_mycity": null
+    },
+    "meerut-city": {
+        "title": "Meerut city",
+        "slug": "meerut-city",
+        "is_mycity": "Y"
+    },
+    "meerut-dehat": {
+        "title": "Meerut dehat",
+        "slug": "meerut-dehat",
+        "is_mycity": "Y"
+    },
+    "mirzapur": {
+        "title": "Mirzapur",
+        "slug": "mirzapur",
+        "is_mycity": null
+    },
+    "mohali": {
+        "title": "Mohali",
+        "slug": "mohali",
+        "is_mycity": "Y"
+    },
+    "moradabad-city": {
+        "title": "Moradabad city",
+        "slug": "moradabad-city",
+        "is_mycity": null
+    },
+    "moradabad-dehat": {
+        "title": "Moradabad dehat",
+        "slug": "moradabad-dehat",
+        "is_mycity": null
+    },
+    "muzaffarnagar": {
+        "title": "Muzaffarnagar",
+        "slug": "muzaffarnagar",
+        "is_mycity": null
+    },
+    "haldwani": {
+        "title": "Nainital",
+        "slug": "haldwani",
+        "is_mycity": "Y"
+    },
+    "narnaul": {
+        "title": "Narnaul",
+        "slug": "narnaul",
+        "is_mycity": "Y"
+    },
+    "noida": {
+        "title": "Noida",
+        "slug": "noida",
+        "is_mycity": "Y"
+    },
+    "panchkula": {
+        "title": "Panchkula",
+        "slug": "panchkula",
+        "is_mycity": "Y"
+    },
+    "panipat": {
+        "title": "Panipat",
+        "slug": "panipat",
+        "is_mycity": "Y"
+    },
+    "kotdwar": {
+        "title": "Pauri Garhwal (Kotdwar)",
+        "slug": "kotdwar",
+        "is_mycity": null
+    },
+    "pilibhit": {
+        "title": "Pilibhit",
+        "slug": "pilibhit",
+        "is_mycity": null
+    },
+    "pithoragarh": {
+        "title": "Pithoragarh",
+        "slug": "pithoragarh",
+        "is_mycity": null
+    },
+    "pratapgarh": {
+        "title": "Pratapgarh",
+        "slug": "pratapgarh",
+        "is_mycity": null
+    },
+    "allahabad-city": {
+        "title": "Prayagraj City",
+        "slug": "allahabad-city",
+        "is_mycity": null
+    },
+    "gangapar": {
+        "title": "Prayagraj Gangapar",
+        "slug": "gangapar",
+        "is_mycity": null
+    },
+    "prayagraj-naini": {
+        "title": "Prayagraj Naini",
+        "slug": "prayagraj-naini",
+        "is_mycity": null
+    },
+    "raebareli": {
+        "title": "Raebareli",
+        "slug": "raebareli",
+        "is_mycity": "Y"
+    },
+    "rajasthan": {
+        "title": "Rajasthan",
+        "slug": "rajasthan",
+        "is_mycity": null
+    },
+    "rampur-dharamshala": {
+        "title": "Rampur (Himachal)",
+        "slug": "rampur-dharamshala",
+        "is_mycity": null
+    },
+    "rampur": {
+        "title": "Rampur (UP)",
+        "slug": "rampur",
+        "is_mycity": null
+    },
+    "rewari": {
+        "title": "Rewari",
+        "slug": "rewari",
+        "is_mycity": "Y"
+    },
+    "rishikesh": {
+        "title": "Rishikesh",
+        "slug": "rishikesh",
+        "is_mycity": "Y"
+    },
+    "rohtak-city": {
+        "title": "Rohtak",
+        "slug": "rohtak-city",
+        "is_mycity": "Y"
+    },
+    "roorkee": {
+        "title": "Roorkee",
+        "slug": "roorkee",
+        "is_mycity": "Y"
+    },
+    "saharanpur-city": {
+        "title": "Saharanpur city",
+        "slug": "saharanpur-city",
+        "is_mycity": null
+    },
+    "saharanpur-dehat": {
+        "title": "Saharanpur dehat",
+        "slug": "saharanpur-dehat",
+        "is_mycity": null
+    },
+    "sambhal": {
+        "title": "Sambhal",
+        "slug": "sambhal",
+        "is_mycity": null
+    },
+    "santkabirnagar": {
+        "title": "Santkabirnagar",
+        "slug": "santkabirnagar",
+        "is_mycity": null
+    },
+    "shahjahanpur": {
+        "title": "Shahjahanpur",
+        "slug": "shahjahanpur",
+        "is_mycity": null
+    },
+    "shamli-muzaffarnagar-dehat": {
+        "title": "Shamli / muzaffarnagar dehat",
+        "slug": "shamli-muzaffarnagar-dehat",
+        "is_mycity": null
+    },
+    "shimla": {
+        "title": "Shimla",
+        "slug": "shimla",
+        "is_mycity": null
+    },
+    "siddharthnagar": {
+        "title": "Siddharthnagar",
+        "slug": "siddharthnagar",
+        "is_mycity": null
+    },
+    "sirmaur": {
+        "title": "Sirmaur",
+        "slug": "sirmaur",
+        "is_mycity": null
+    },
+    "sirsa": {
+        "title": "Sirsa",
+        "slug": "sirsa",
+        "is_mycity": "Y"
+    },
+    "sitapur": {
+        "title": "Sitapur",
+        "slug": "sitapur",
+        "is_mycity": "Y"
+    },
+    "solan": {
+        "title": "Solan",
+        "slug": "solan",
+        "is_mycity": null
+    },
+    "sonbhadra": {
+        "title": "Sonbhadra",
+        "slug": "sonbhadra",
+        "is_mycity": null
+    },
+    "sonipat": {
+        "title": "Sonipat",
+        "slug": "sonipat",
+        "is_mycity": "Y"
+    },
+    "sultanpur": {
+        "title": "Sultanpur",
+        "slug": "sultanpur",
+        "is_mycity": "Y"
+    },
+    "tehri-uttarkashi": {
+        "title": "Tehri-Uttarkashi (Garhwal)",
+        "slug": "tehri-uttarkashi",
+        "is_mycity": null
+    },
+    "udhampur": {
+        "title": "Udhampur",
+        "slug": "udhampur",
+        "is_mycity": null
+    },
+    "udhamsingh-nagar": {
+        "title": "Udhamsingh nagar",
+        "slug": "udhamsingh-nagar",
+        "is_mycity": null
+    },
+    "una": {
+        "title": "Una",
+        "slug": "una",
+        "is_mycity": null
+    },
+    "unnao": {
+        "title": "Unnao",
+        "slug": "unnao",
+        "is_mycity": null
+    },
+    "varanasi-city": {
+        "title": "Varanasi",
+        "slug": "varanasi-city",
+        "is_mycity": "Y"
+    },
+    "vikas-nagar": {
+        "title": "Vikas nagar",
+        "slug": "vikas-nagar",
+        "is_mycity": "Y"
+    },
+    "yamuna-nagar": {
+        "title": "Yamuna nagar",
+        "slug": "yamuna-nagar",
+        "is_mycity": "Y"
+    }
+};
+
+function loadCityOptions() {
+    const citySelect = document.getElementById('city');
+    Object.keys(data).forEach(key => {
+        const city = data[key];
+        const option = document.createElement('option');
+        option.value = city.slug;
+        option.textContent = city.title;
+        citySelect.appendChild(option);
+    });
+    updatePaperTypeOptions();
+}
+
+function updatePaperTypeOptions() {
+    const citySelect = document.getElementById('city');
+    const paperTypeSelect = document.getElementById('paperType');
+    const selectedCitySlug = citySelect.value;
+    const selectedCityData = Object.values(data).find(city => city.slug === selectedCitySlug);
+    paperTypeSelect.innerHTML = '';
+    const mainOption = document.createElement('option');
+    mainOption.value = "main";
+    mainOption.textContent = "Main";
+    paperTypeSelect.appendChild(mainOption);
+    if (selectedCityData && selectedCityData.is_mycity === "Y") {
+        const myCityOption = document.createElement('option');
+        myCityOption.value = "mycity";
+        myCityOption.textContent = "My City";
+        paperTypeSelect.appendChild(myCityOption);
+    }
+}
+
+async function download() {
+    const date = document.getElementById('datePicker').value;
+    const city = document.getElementById('city').value;
+    const paperType = document.getElementById('paperType').value;
+    const downloadingMessage = document.getElementById('downloadingMessage');
+    const downloadButton = document.querySelector('#form button');
+    const mainContainer = document.getElementById('mainContainer');
+    const previewElement = document.getElementById('preview');
+
+    downloadButton.style.display = 'none';
+    downloadingMessage.style.display = 'block';
+
+    let [year, month, day] = date.split("-");
+
+    try {
+        const firstResponse = await fetch('https://d39ihfvw4fm8k.cloudfront.net/dev/v2/download', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ year, month, day, city, type: paperType, page: "01" })
+        });
+
+        const firstData = await firstResponse.json();
+        if (!firstData.data || !firstData.data.totalPage) throw new Error("Invalid response");
+
+        const totalPage = parseInt(firstData.data.totalPage);
+        const images = [firstData.data.htmlContent];
+
+        for (let i = 2; i <= totalPage; i++) {
+            const pageNumber = i.toString().padStart(2, '0');
+            const pageResponse = await fetch('https://d39ihfvw4fm8k.cloudfront.net/dev/v2/download', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ year, month, day, city, type: paperType, page: pageNumber })
+            });
+            const pageData = await pageResponse.json();
+            if (pageData.data && pageData.data.htmlContent) {
+                images.push(pageData.data.htmlContent);
+            }
+        }
+
+        mainContainer.style.display = 'none';
+        document.getElementById('footer').style.display = 'none';
+        previewElement.innerHTML = images.map(img => `<div>${img}</div>`).join('');
+
+    } catch (error) {
+        console.error('Error:', error);
+        downloadButton.style.display = 'block';
+        downloadingMessage.style.display = 'none';
+    }
+}
+
+const defaultAmarujalaOption = () => {
+    loadCityOptions();
+    document.getElementById('city').addEventListener('change', updatePaperTypeOptions);
+
+    const currentDate = new Date();
+    const formattedDate = `${currentDate.getFullYear()}-${(`0${currentDate.getMonth() + 1}`).slice(-2)}-${(`0${currentDate.getDate()}`).slice(-2)}`;
+    document.getElementById('datePicker').value = formattedDate;
+    document.getElementById('datePicker').setAttribute("max", formattedDate);
+
+};
