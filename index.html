@@ -20,12 +20,32 @@
             </a>
         </p>
         <div class="form-wrapper">
+
+            <!-- Hindustan Times Section -->
+            <div class="form-container" id="hindustanTimesForm">
+                <h1>Hindustan Times</h1>
+                <h2>ई-पेपर</h2>
+
+                <div class="new-badge">New</div>
+
+                <label for="hindustanTimesDate">Date</label>
+                <input type="date" id="hindustanTimesDate" />
+
+                <label for="hindustanTimesCity">City</label>
+                <select id="hindustanTimesCity">
+                </select>
+
+                <label for="hindustanTimesSubCity">Sub City</label>
+                <select id="hindustanTimesSubCity">
+                </select>
+
+                <button onclick="downloadHinduStanTimes()">Download</button>
+            </div>
+
             <!-- Dainik Jagran Section -->
             <div class="form-container" id="jagranForm">
                 <h1>दैनिक जागरण</h1>
                 <h2>ई-पेपर</h2>
-
-                <div class="new-badge">New</div>
 
                 <label for="jagranDate">एक तारीख चुनें</label>
                 <input type="date" id="jagranDate" />
@@ -75,6 +95,7 @@
 
     <script src="./amarujala.js"></script>
     <script src="./danikjagran.js"></script>
+    <script src="./hindustantimes.js"></script>
 
     <script>
 
@@ -82,6 +103,7 @@
 
             defaultDanikJagranOption();
             defaultAmarujalaOption();
+            defaultHindustanTimesOption();
         }
 
     </script>
