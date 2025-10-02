@@ -22,11 +22,26 @@
         <div class="form-wrapper">
 
             <!-- Hindustan Times Section -->
+            <div class="form-container" id="TOIForm">
+                <h1>The Times of India</h1>
+                <h2>Epaper</h2>
+
+                <div class="new-badge">New</div>
+
+                <label for="TOIDate">Date</label>
+                <input type="date" id="TOIDate" />
+
+                <label for="TOICity">City</label>
+                <select id="TOICity">
+                </select>
+
+                <button onclick="downloadTOI()">Download</button>
+            </div>
+
+            <!-- Hindustan Times Section -->
             <div class="form-container" id="hindustanTimesForm">
                 <h1>Hindustan Times</h1>
                 <h2>ई-पेपर</h2>
-
-                <div class="new-badge">New</div>
 
                 <label for="hindustanTimesDate">Date</label>
                 <input type="date" id="hindustanTimesDate" />
@@ -96,14 +111,17 @@
     <script src="./amarujala.js"></script>
     <script src="./danikjagran.js"></script>
     <script src="./hindustantimes.js"></script>
+    <script src="./TOI.js"></script>
 
     <script>
 
-        window.onload = () => {
+        window.onload = async () => {
 
+            defaultTOIOption();
             defaultDanikJagranOption();
             defaultAmarujalaOption();
             defaultHindustanTimesOption();
+
         }
 
     </script>
