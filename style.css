@@ -14,18 +14,31 @@ body {
 }
 
 .form-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
+    gap: 30px;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .form-wrapper {
+        grid-template-columns: 1fr; /* Stack forms on mobile */
+    }
+}
+
+/* .form-wrapper {
     display: flex;
     flex-direction: column;
     gap: 30px;
-}
+} */
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .form-wrapper {
         flex-direction: row;
         justify-content: space-around;
         align-items: flex-start;
     }
-}
+} */
 
 .form-container {
     position: relative; /* only for .new-badge*/
