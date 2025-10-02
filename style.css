@@ -42,8 +42,8 @@ body {
 
 .form-container {
     position: relative; /* only for .new-badge*/
-    width: 100%;
-    max-width: 300px;
+    /* width: 100%; */
+    /* max-width: 300px; */
     padding: 20px;
     margin: 0 auto;
 }
