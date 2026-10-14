@@ -4,128 +4,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="0; url=https://www.indupaper.com/" />
     <title>ई-पेपर</title>
-    <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
 
-    <div class="container" id="mainContainer">
-        <p style="text-align: center; font-size: 20px; margin: 20px 0;">
-            📢 For new updates, follow on
-            <a href="https://instagram.com/rahulfaujdarx" target="_blank"
-                style="font-weight: bold; color: #000; text-decoration: none">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
-                    class="insta-icon">&nbsp;@rahulfaujdarx
-            </a>
-        </p>
-        <div class="form-wrapper">
-
-            <!-- Hindustan Times Section -->
-            <div class="form-container" id="TOIForm">
-                <h1>The Times of India</h1>
-                <h2>Epaper</h2>
-
-                <div class="new-badge">New</div>
-
-                <label for="TOIDate">Date</label>
-                <input type="date" id="TOIDate" />
-
-                <label for="TOICity">City</label>
-                <select id="TOICity">
-                </select>
-
-                <button onclick="downloadTOI()">Download</button>
-            </div>
-
-            <!-- Hindustan Times Section -->
-            <div class="form-container" id="hindustanTimesForm">
-                <h1>Hindustan Times</h1>
-                <h2>ई-पेपर</h2>
-
-                <label for="hindustanTimesDate">Date</label>
-                <input type="date" id="hindustanTimesDate" />
-
-                <label for="hindustanTimesCity">City</label>
-                <select id="hindustanTimesCity">
-                </select>
-
-                <label for="hindustanTimesSubCity">Sub City</label>
-                <select id="hindustanTimesSubCity">
-                </select>
-
-                <button onclick="downloadHinduStanTimes()">Download</button>
-            </div>
-
-            <!-- Dainik Jagran Section -->
-            <div class="form-container" id="jagranForm">
-                <h1>दैनिक जागरण</h1>
-                <h2>ई-पेपर</h2>
-
-                <label for="jagranDate">एक तारीख चुनें</label>
-                <input type="date" id="jagranDate" />
-
-                <label for="jagranState">राज्य चुनें</label>
-                <select id="jagranState">
-                </select>
-
-                <label for="jagranCity">शहर चुनें</label>
-                <select id="jagranCity">
-                </select>
-
-                <button onclick="downloadDanikJagran()">Download</button>
-            </div>
-
-            <!-- Amar Ujala Section -->
-            <div class="form-container" id="form">
-                <h1>अमर उजाला</h1>
-                <h2>ई-पेपर</h2>
-
-                <label for="datePicker">एक तारीख चुनें</label>
-                <input type="date" min="2015-01-01" id="datePicker" required><br>
-
-                <label for="city">शहर चुनें</label>
-                <select id="city" required></select><br>
-
-                <label for="paperType">पेपर</label>
-                <select id="paperType" required></select><br>
-
-                <button onclick="download()">Download</button>
-                <p id="downloadingMessage" class="downloading-message">Downloading, please wait...</p>
-            </div>
-        </div>
-
+    <div class="container" id="mainContainer" style="min-height: 70vh; display: flex; align-items: center; justify-content: center;">
+        <p style="text-align: center; font-size: 20px;">Visit indupaper.com</p>
     </div>
-
-    <div id="preview"></div>
-
-    <footer class="footer" id="footer">
-        Made with by
-        <a href="https://instagram.com/rahulfaujdarx" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
-                class="insta-icon">
-            @rahulfaujdarx
-        </a>
-    </footer>
-
-    <script src="./amarujala.js"></script>
-    <script src="./danikjagran.js"></script>
-    <script src="./hindustantimes.js"></script>
-    <script src="./TOI.js"></script>
-
-    <script>
-
-        window.onload = async () => {
-
-            defaultTOIOption();
-            defaultDanikJagranOption();
-            defaultAmarujalaOption();
-            defaultHindustanTimesOption();
-
-        }
-
-    </script>
 
 
 </body>
